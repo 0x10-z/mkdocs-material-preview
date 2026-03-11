@@ -1,0 +1,259 @@
+/* ==========================================================================
+   MkDocs Material Preview — Styles
+   ========================================================================== */
+
+/* ---------- Admonitions ---------- */
+
+.admonition {
+    margin: 1em 0;
+    padding: 0 0.8em 0.8em 0.8em;
+    border-left: 4px solid #448aff;
+    border-radius: 4px;
+    background-color: rgba(68, 138, 255, 0.05);
+    overflow: hidden;
+}
+
+.admonition-title {
+    margin: 0 -0.8em 0.8em -0.8em;
+    padding: 0.5em 0.8em;
+    font-weight: 700;
+    background-color: rgba(68, 138, 255, 0.1);
+}
+
+details.admonition > summary {
+    cursor: pointer;
+}
+
+details.admonition > summary::marker {
+    content: "";
+}
+
+details.admonition > summary::before {
+    content: "▶ ";
+    font-size: 0.7em;
+    vertical-align: middle;
+    margin-right: 0.4em;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+details.admonition[open] > summary::before {
+    content: "▼ ";
+}
+
+/* --- Type-specific colors --- */
+
+/* Note (default) */
+.admonition.note { border-left-color: #448aff; background-color: rgba(68, 138, 255, 0.05); }
+.admonition.note > .admonition-title,
+.admonition.note > summary { background-color: rgba(68, 138, 255, 0.1); }
+
+/* Abstract / Summary / TL;DR */
+.admonition.abstract, .admonition.summary, .admonition.tldr {
+    border-left-color: #00b0ff; background-color: rgba(0, 176, 255, 0.05);
+}
+.admonition.abstract > .admonition-title, .admonition.abstract > summary,
+.admonition.summary > .admonition-title, .admonition.summary > summary,
+.admonition.tldr > .admonition-title, .admonition.tldr > summary {
+    background-color: rgba(0, 176, 255, 0.1);
+}
+
+/* Info / Todo */
+.admonition.info, .admonition.todo {
+    border-left-color: #00b8d4; background-color: rgba(0, 184, 212, 0.05);
+}
+.admonition.info > .admonition-title, .admonition.info > summary,
+.admonition.todo > .admonition-title, .admonition.todo > summary {
+    background-color: rgba(0, 184, 212, 0.1);
+}
+
+/* Tip / Hint / Important */
+.admonition.tip, .admonition.hint, .admonition.important {
+    border-left-color: #00bfa5; background-color: rgba(0, 191, 165, 0.05);
+}
+.admonition.tip > .admonition-title, .admonition.tip > summary,
+.admonition.hint > .admonition-title, .admonition.hint > summary,
+.admonition.important > .admonition-title, .admonition.important > summary {
+    background-color: rgba(0, 191, 165, 0.1);
+}
+
+/* Success / Check / Done */
+.admonition.success, .admonition.check, .admonition.done {
+    border-left-color: #00c853; background-color: rgba(0, 200, 83, 0.05);
+}
+.admonition.success > .admonition-title, .admonition.success > summary,
+.admonition.check > .admonition-title, .admonition.check > summary,
+.admonition.done > .admonition-title, .admonition.done > summary {
+    background-color: rgba(0, 200, 83, 0.1);
+}
+
+/* Question / Help / FAQ */
+.admonition.question, .admonition.help, .admonition.faq {
+    border-left-color: #64dd17; background-color: rgba(100, 221, 23, 0.05);
+}
+.admonition.question > .admonition-title, .admonition.question > summary,
+.admonition.help > .admonition-title, .admonition.help > summary,
+.admonition.faq > .admonition-title, .admonition.faq > summary {
+    background-color: rgba(100, 221, 23, 0.1);
+}
+
+/* Warning / Caution / Attention */
+.admonition.warning, .admonition.caution, .admonition.attention {
+    border-left-color: #ff9100; background-color: rgba(255, 145, 0, 0.05);
+}
+.admonition.warning > .admonition-title, .admonition.warning > summary,
+.admonition.caution > .admonition-title, .admonition.caution > summary,
+.admonition.attention > .admonition-title, .admonition.attention > summary {
+    background-color: rgba(255, 145, 0, 0.1);
+}
+
+/* Failure / Fail / Missing */
+.admonition.failure, .admonition.fail, .admonition.missing {
+    border-left-color: #ff5252; background-color: rgba(255, 82, 82, 0.05);
+}
+.admonition.failure > .admonition-title, .admonition.failure > summary,
+.admonition.fail > .admonition-title, .admonition.fail > summary,
+.admonition.missing > .admonition-title, .admonition.missing > summary {
+    background-color: rgba(255, 82, 82, 0.1);
+}
+
+/* Danger / Error */
+.admonition.danger, .admonition.error {
+    border-left-color: #ff1744; background-color: rgba(255, 23, 68, 0.05);
+}
+.admonition.danger > .admonition-title, .admonition.danger > summary,
+.admonition.error > .admonition-title, .admonition.error > summary {
+    background-color: rgba(255, 23, 68, 0.1);
+}
+
+/* Bug */
+.admonition.bug {
+    border-left-color: #f50057; background-color: rgba(245, 0, 87, 0.05);
+}
+.admonition.bug > .admonition-title, .admonition.bug > summary {
+    background-color: rgba(245, 0, 87, 0.1);
+}
+
+/* Example */
+.admonition.example {
+    border-left-color: #7c4dff; background-color: rgba(124, 77, 255, 0.05);
+}
+.admonition.example > .admonition-title, .admonition.example > summary {
+    background-color: rgba(124, 77, 255, 0.1);
+}
+
+/* Quote / Cite */
+.admonition.quote, .admonition.cite {
+    border-left-color: #9e9e9e; background-color: rgba(158, 158, 158, 0.05);
+}
+.admonition.quote > .admonition-title, .admonition.quote > summary,
+.admonition.cite > .admonition-title, .admonition.cite > summary {
+    background-color: rgba(158, 158, 158, 0.1);
+}
+
+/* ---------- Content Tabs ---------- */
+
+.tabbed-set {
+    margin: 1em 0;
+    border: 1px solid var(--vscode-panel-border, #e0e0e0);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tabbed-set > input {
+    display: none;
+}
+
+.tabbed-set > label {
+    display: inline-block;
+    padding: 0.6em 1.2em;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85em;
+    border-bottom: 2px solid transparent;
+    color: var(--vscode-foreground, #333);
+    opacity: 0.7;
+    transition: opacity 0.2s, border-color 0.2s;
+}
+
+.tabbed-set > label:hover {
+    opacity: 1;
+}
+
+/* Active tab label highlighting — up to 10 tabs */
+.tabbed-set > input:nth-child(1):checked ~ label:nth-of-type(1),
+.tabbed-set > input:nth-child(2):checked ~ label:nth-of-type(2),
+.tabbed-set > input:nth-child(3):checked ~ label:nth-of-type(3),
+.tabbed-set > input:nth-child(4):checked ~ label:nth-of-type(4),
+.tabbed-set > input:nth-child(5):checked ~ label:nth-of-type(5),
+.tabbed-set > input:nth-child(6):checked ~ label:nth-of-type(6),
+.tabbed-set > input:nth-child(7):checked ~ label:nth-of-type(7),
+.tabbed-set > input:nth-child(8):checked ~ label:nth-of-type(8),
+.tabbed-set > input:nth-child(9):checked ~ label:nth-of-type(9),
+.tabbed-set > input:nth-child(10):checked ~ label:nth-of-type(10) {
+    opacity: 1;
+    border-bottom-color: #448aff;
+}
+
+.tabbed-content {
+    padding: 0.8em 1em;
+}
+
+.tabbed-content > .tabbed-block {
+    display: none;
+}
+
+/* Show the active tab content — up to 10 tabs */
+.tabbed-set > input:nth-child(1):checked ~ .tabbed-content > .tabbed-block:nth-child(1),
+.tabbed-set > input:nth-child(2):checked ~ .tabbed-content > .tabbed-block:nth-child(2),
+.tabbed-set > input:nth-child(3):checked ~ .tabbed-content > .tabbed-block:nth-child(3),
+.tabbed-set > input:nth-child(4):checked ~ .tabbed-content > .tabbed-block:nth-child(4),
+.tabbed-set > input:nth-child(5):checked ~ .tabbed-content > .tabbed-block:nth-child(5),
+.tabbed-set > input:nth-child(6):checked ~ .tabbed-content > .tabbed-block:nth-child(6),
+.tabbed-set > input:nth-child(7):checked ~ .tabbed-content > .tabbed-block:nth-child(7),
+.tabbed-set > input:nth-child(8):checked ~ .tabbed-content > .tabbed-block:nth-child(8),
+.tabbed-set > input:nth-child(9):checked ~ .tabbed-content > .tabbed-block:nth-child(9),
+.tabbed-set > input:nth-child(10):checked ~ .tabbed-content > .tabbed-block:nth-child(10) {
+    display: block;
+}
+
+/* ---------- Code Block Enhancements ---------- */
+
+.code-block-wrapper {
+    margin: 1em 0;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--vscode-panel-border, #e0e0e0);
+}
+
+.code-block-title {
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family: var(--vscode-editor-font-family, monospace);
+    background-color: var(--vscode-editorGroupHeader-tabsBackground, #f5f5f5);
+    border-bottom: 1px solid var(--vscode-panel-border, #e0e0e0);
+}
+
+.code-block-wrapper pre {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.hll {
+    display: block;
+    background-color: rgba(255, 235, 59, 0.15);
+    margin: 0 -1em;
+    padding: 0 1em;
+}
+
+.line-number {
+    display: inline-block;
+    min-width: 2.5em;
+    padding-right: 1em;
+    text-align: right;
+    color: var(--vscode-editorLineNumber-foreground, #999);
+    user-select: none;
+    -webkit-user-select: none;
+}
