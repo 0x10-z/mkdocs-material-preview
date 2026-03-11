@@ -3,6 +3,7 @@ name: Build VSIX
 on:
   push:
     branches: [main]
+    tags: ["v*"]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -21,9 +22,16 @@ jobs:
 
       - run: npm install -g @vscode/vsce
 
-      - run: vsce package --allow-missing-repository
+      - run: vsce package
 
       - uses: actions/upload-artifact@v4
         with:
           name: vsix
           path: "*.vsix"
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.vsix"
+          generate_release_notes: true
