@@ -10,7 +10,7 @@
  * Nesting is supported via recursive tokenization.
  */
 
-const MARKER_RE = /^(!{3}|\?{3}\+?)\s+(\w[\w-]*)(?:\s+"(.*)")?\s*$/;
+const MARKER_RE = /^(!{3}|\?{3}\+?)\s+(\w[\w-]*)(?:\s+(inline(?:\s+end)?))?(?:\s+"(.*)")?\s*$/;
 
 function getLine(state: any, line: number): string {
     const start = state.bMarks[line] + state.tShift[line];
@@ -27,7 +27,8 @@ function admonitionRule(state: any, startLine: number, endLine: number, silent: 
 
     const marker = match[1];          // "!!!", "???", or "???+"
     const adType = match[2];          // "note", "warning", etc.
-    const rawTitle = match[3];        // explicit title or undefined
+    const inlineModifier = match[3];  // "inline", "inline end", or undefined
+    const rawTitle = match[4];        // explicit title or undefined
     const title = rawTitle !== undefined ? rawTitle : adType.charAt(0).toUpperCase() + adType.slice(1);
 
     const collapsible = marker.startsWith('???');
@@ -50,7 +51,9 @@ function admonitionRule(state: any, startLine: number, endLine: number, silent: 
     // Open
     let tokenOpen = state.push('admonition_open', collapsible ? 'details' : 'div', 1);
     tokenOpen.block = true;
-    tokenOpen.meta = { type: adType, collapsible, expanded };
+    const inline = inlineModifier === 'inline';
+    const inlineEnd = inlineModifier === 'inline end';
+    tokenOpen.meta = { type: adType, collapsible, expanded, inline, inlineEnd };
     tokenOpen.map = [startLine, nextLine];
 
     // Title open
@@ -92,11 +95,15 @@ export function admonitionPlugin(md: any): void {
 
     md.renderer.rules['admonition_open'] = (tokens: any[], idx: number) => {
         const token = tokens[idx];
-        const { type, collapsible, expanded } = token.meta;
+        const { type, collapsible, expanded, inline, inlineEnd } = token.meta;
+        const classes = ['admonition', type];
+        if (inline) classes.push('inline');
+        if (inlineEnd) classes.push('inline', 'end');
+        const classAttr = classes.join(' ');
         if (collapsible) {
-            return `<details class="admonition ${type}"${expanded ? ' open' : ''}>\n`;
+            return `<details class="${classAttr}"${expanded ? ' open' : ''}>\n`;
         }
-        return `<div class="admonition ${type}">\n`;
+        return `<div class="${classAttr}">\n`;
     };
 
     md.renderer.rules['admonition_close'] = (tokens: any[], idx: number) => {
