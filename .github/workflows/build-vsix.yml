@@ -20,6 +20,8 @@ jobs:
 
       - run: npm ci
 
+      - run: npm test
+
       - run: npm install -g @vscode/vsce
 
       - run: vsce package
