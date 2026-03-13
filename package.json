@@ -1,8 +1,8 @@
 {
     "name": "mkdocs-material-preview",
     "displayName": "MkDocs Material Preview",
-    "description": "Material for MkDocs component support in VS Code Markdown preview (admonitions, tabs, code enhancements)",
-    "version": "0.1.3",
+    "description": "Material for MkDocs preview — no MkDocs, Python, or server needed. Just use VS Code's built-in Markdown preview (Ctrl+Shift+V). Admonitions, tabs, and code enhancements.",
+    "version": "0.1.4",
     "author": "Iker Ocio Zuazo (0x10)",
     "publisher": "0x10",
     "license": "MIT",

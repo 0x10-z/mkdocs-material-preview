@@ -4,7 +4,8 @@
 
 !!! note "This is a note"
 
-    hola que tal esto estabien
+    I can write in live
+    
     Notes are useful for highlighting important information.
 
     They can contain **multiple paragraphs** and even `inline code`.
