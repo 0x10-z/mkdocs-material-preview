@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4051b5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c4dff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="doc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#e8eaf6;stop-opacity:0.95" />
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded background -->
+  <rect x="4" y="4" width="120" height="120" rx="20" ry="20" fill="url(#bg)" />
+
+  <!-- Document shape -->
+  <path d="M36 22 L82 22 L96 36 L96 106 L36 106 Z" fill="url(#doc)" rx="3" />
+  <!-- Folded corner -->
+  <path d="M82 22 L82 36 L96 36 Z" fill="#c5cae9" />
+
+  <!-- Markdown lines -->
+  <rect x="46" y="46" width="40" height="4" rx="2" fill="#4051b5" opacity="0.7" />
+  <rect x="46" y="56" width="32" height="4" rx="2" fill="#4051b5" opacity="0.5" />
+  <rect x="46" y="66" width="36" height="4" rx="2" fill="#4051b5" opacity="0.4" />
+
+  <!-- Admonition accent (colored left bar + block) -->
+  <rect x="44" y="78" width="3" height="18" rx="1.5" fill="#00bfa5" />
+  <rect x="49" y="78" width="38" height="18" rx="2" fill="#00bfa5" opacity="0.12" />
+  <rect x="54" y="83" width="20" height="3" rx="1.5" fill="#00bfa5" opacity="0.6" />
+  <rect x="54" y="89" width="14" height="3" rx="1.5" fill="#00bfa5" opacity="0.4" />
+
+  <!-- Eye icon (preview) -->
+  <g transform="translate(64, 36)" fill="#4051b5" opacity="0.85">
+    <path d="M-10 0 Q0 -7 10 0 Q0 7 -10 0 Z" fill="none" stroke="#4051b5" stroke-width="1.8" />
+    <circle cx="0" cy="0" r="3" fill="#4051b5" />
+  </g>
+</svg>

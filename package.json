@@ -2,10 +2,11 @@
     "name": "mkdocs-material-preview",
     "displayName": "MkDocs Material Preview",
     "description": "Material for MkDocs component support in VS Code Markdown preview (admonitions, tabs, code enhancements)",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "author": "Iker Ocio Zuazo (0x10)",
     "publisher": "0x10",
     "license": "MIT",
+    "icon": "media/icon.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/0x10-z/mkdocs-material-preview"
