@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A VS Code extension that enhances the built-in Markdown preview to render **Material for MkDocs** components that are not supported by the default Markdown renderer.
+A VS Code extension that enhances the built-in Markdown preview to render **Material for MkDocs** and **Zensical** (its successor, by the same team) components that are not supported by the default Markdown renderer. Both use the same Markdown syntax.
 
 ### Supported Components
 

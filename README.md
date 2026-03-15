@@ -1,8 +1,14 @@
 # MkDocs Material Preview
 
-A VS Code extension that enhances the built-in Markdown preview to render **Material for MkDocs** components that are not supported by the default Markdown renderer.
+A VS Code extension that enhances the built-in Markdown preview to render **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** and **[Zensical](https://zensical.org)** components that are not supported by the default Markdown renderer.
 
-Unlike other solutions, this extension **does not require MkDocs, Python, or any external server**. It works directly on top of VS Code's native Markdown preview by extending its `markdown-it` parser with custom plugins. This makes it the fastest way to preview Material for MkDocs syntax — just open the preview and it's there, with zero setup and instant rendering.
+> **Compatible with:**
+> [![Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
+> [![Zensical](https://img.shields.io/badge/Zensical-FF6B35?logoColor=white)](https://zensical.org)
+>
+> Zensical is the successor to Material for MkDocs, built by the same team. Both use the same Markdown syntax, so this extension works seamlessly with either.
+
+Unlike other solutions, this extension **does not require MkDocs, Python, or any external server**. It works directly on top of VS Code's native Markdown preview by extending its `markdown-it` parser with custom plugins. This makes it the fastest way to preview Material for MkDocs / Zensical syntax — just open the preview and it's there, with zero setup and instant rendering.
 
 ![Demo](media/demo.gif)
 
@@ -39,7 +45,7 @@ Then install the generated `.vsix` file.
 
 No extra commands or panels — just use VS Code's built-in Markdown preview:
 
-1. Open any `.md` file that uses Material for MkDocs syntax
+1. Open any `.md` file that uses Material for MkDocs or Zensical syntax
 2. Open the Markdown preview: `Ctrl+Shift+V` (Windows/Linux) or `Cmd+Shift+V` (Mac)
 3. That's it — admonitions, content tabs, and enhanced code blocks render automatically
 

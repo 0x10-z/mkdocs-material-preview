@@ -1,8 +1,8 @@
 {
     "name": "mkdocs-material-preview",
     "displayName": "MkDocs Material Preview",
-    "description": "Material for MkDocs preview — no MkDocs, Python, or server needed. Just use VS Code's built-in Markdown preview (Ctrl+Shift+V). Admonitions, tabs, and code enhancements.",
-    "version": "0.1.4",
+    "description": "Material for MkDocs & Zensical preview — no MkDocs, Python, or server needed. Just use VS Code's built-in Markdown preview (Ctrl+Shift+V). Admonitions, tabs, and code enhancements.",
+    "version": "0.1.5",
     "author": "Iker Ocio Zuazo (0x10)",
     "publisher": "0x10",
     "license": "MIT",
@@ -16,6 +16,14 @@
     },
     "categories": [
         "Other"
+    ],
+    "keywords": [
+        "mkdocs",
+        "material",
+        "zensical",
+        "markdown",
+        "preview",
+        "admonition"
     ],
     "activationEvents": [],
     "main": "./dist/extension.js",
