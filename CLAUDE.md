@@ -88,3 +88,14 @@ vsce package
 ```
 
 This produces a `.vsix` file that can be installed via `Extensions: Install from VSIX...` in VS Code.
+
+## Publishing
+
+CI publishes to the VS Code Marketplace automatically when a version tag is pushed. After bumping the version in `package.json`, always create and push the tag:
+
+```bash
+git tag v<version>
+git push origin v<version>
+```
+
+Without the tag, the new version will not be published.
