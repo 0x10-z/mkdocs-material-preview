@@ -5,12 +5,14 @@
  *   !!! type "Optional title"      — standard admonition
  *   ??? type "Optional title"      — collapsible (closed)
  *   ???+ type "Optional title"     — collapsible (open)
+ *   ??? "Title only"               — type-less (defaults to "note")
  *
+ * Type or title (or both) must be present.
  * Content must be indented by 4 spaces.
  * Nesting is supported via recursive tokenization.
  */
 
-const MARKER_RE = /^(!{3}|\?{3}\+?)\s+(\w[\w-]*)(?:\s+(inline(?:\s+end)?))?(?:\s+"(.*)")?\s*$/;
+const MARKER_RE = /^(!{3}|\?{3}\+?)\s+(?:(\w[\w-]*)(?:\s+(inline(?:\s+end)?))?\s*)?(?:"(.*)")?\s*$/;
 
 function getLine(state: any, line: number): string {
     const start = state.bMarks[line] + state.tShift[line];
@@ -26,9 +28,13 @@ function admonitionRule(state: any, startLine: number, endLine: number, silent: 
     if (silent) return true;
 
     const marker = match[1];          // "!!!", "???", or "???+"
-    const adType = match[2];          // "note", "warning", etc.
+    const adType = match[2] || 'note'; // "note", "warning", etc. (defaults to "note")
     const inlineModifier = match[3];  // "inline", "inline end", or undefined
     const rawTitle = match[4];        // explicit title or undefined
+
+    // Must have at least a type or a title
+    if (!match[2] && rawTitle === undefined) return false;
+
     const title = rawTitle !== undefined ? rawTitle : adType.charAt(0).toUpperCase() + adType.slice(1);
 
     const collapsible = marker.startsWith('???');

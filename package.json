@@ -2,7 +2,7 @@
     "name": "mkdocs-material-preview",
     "displayName": "MkDocs Material Preview",
     "description": "Material for MkDocs & Zensical preview — no MkDocs, Python, or server needed. Just use VS Code's built-in Markdown preview (Ctrl+Shift+V). Admonitions, tabs, and code enhancements.",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "author": "Iker Ocio Zuazo (0x10)",
     "publisher": "0x10",
     "license": "MIT",

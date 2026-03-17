@@ -72,4 +72,43 @@ describe('admonition plugin', () => {
         const html = render('!!! info inline end "Side note"\n    Inline end content');
         expect(html).toContain('class="admonition info inline end"');
     });
+
+    it('renders type-less admonition with title only', () => {
+        const html = render('??? "Click to expand"\n    Some content');
+        expect(html).toContain('<details class="admonition note">');
+        expect(html).toContain('<summary class="admonition-title">Click to expand</summary>');
+        expect(html).toContain('Some content');
+    });
+
+    it('renders type-less standard admonition with title only', () => {
+        const html = render('!!! "Important info"\n    Some content');
+        expect(html).toContain('<div class="admonition note">');
+        expect(html).toContain('<p class="admonition-title">Important info</p>');
+    });
+
+    it('renders type-less expanded collapsible with title only', () => {
+        const html = render('???+ "Open by default"\n    Visible content');
+        expect(html).toContain('<details class="admonition note" open>');
+        expect(html).toContain('<summary class="admonition-title">Open by default</summary>');
+    });
+
+    it('does not match marker with neither type nor title', () => {
+        const html = render('???\n    Some content');
+        expect(html).not.toContain('admonition');
+    });
+
+    it('renders type-less admonition with image in title', () => {
+        const html = render('??? "![](https://placehold.co/16) Undo"\n    Undo the last operation');
+        expect(html).toContain('<details class="admonition note">');
+        expect(html).toContain('<img src="https://placehold.co/16"');
+        expect(html).toContain('Undo');
+    });
+
+    it('renders nested admonition inside type-less collapsible', () => {
+        const input = '??? "Parent"\n    Some text\n\n    !!! info\n        Nested info';
+        const html = render(input);
+        expect(html).toContain('<details class="admonition note">');
+        expect(html).toContain('class="admonition info"');
+        expect(html).toContain('Nested info');
+    });
 });
