@@ -272,3 +272,20 @@ details.admonition[open] > summary::before {
     user-select: none;
     -webkit-user-select: none;
 }
+
+/* ---------- Captions ---------- */
+
+figure {
+    margin: 1em 0;
+    display: table;
+}
+
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    font-size: 0.85em;
+    font-style: italic;
+    color: var(--vscode-descriptionForeground, #666);
+    margin-top: 0.4em;
+    text-align: center;
+}

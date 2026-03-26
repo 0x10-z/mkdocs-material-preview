@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { admonitionPlugin } from './plugins/admonition';
 import { contentTabsPlugin } from './plugins/content-tabs';
 import { codeEnhancementsPlugin } from './plugins/code-enhancements';
+import { captionPlugin } from './plugins/caption';
 
 export function activate(_context: vscode.ExtensionContext) {
     return {
@@ -9,7 +10,8 @@ export function activate(_context: vscode.ExtensionContext) {
             return md
                 .use(admonitionPlugin)
                 .use(contentTabsPlugin)
-                .use(codeEnhancementsPlugin);
+                .use(codeEnhancementsPlugin)
+                .use(captionPlugin);
         }
     };
 }
